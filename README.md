@@ -17,9 +17,9 @@ A job-search engine I designed and operate. Every morning it reads employers' ow
 |---|---|
 | **Runs by itself** | Every morning on GitHub Actions. **108 of its first 109 cloud runs passed** since Sep 28, 2026. The one failure was a break I caused on purpose, to prove the alert reaches my phone. |
 | **Built over** | **125 commits I directed** since July 6, 2026, plus 57 the system made itself (its daily records). |
-| **Reads** | **295 employer job boards, 16,258 listings** in the Oct 17, 2026 run. |
+| **Reads** | **295 employer job boards, 16,258 listings** in the live engine's Oct 17, 2026 run. |
 | **Tested** | **25 test files, 886 checks in the live engine (744 in the public copy), all passing.** When a real posting fools it, that posting becomes a test so the mistake can't come back. |
-| **Size** | ~13,800 lines of Python in the live engine. I didn't hand-type them. I decided what each part does, reviewed it, and verified it by running it. |
+| **Size** | 13,765 lines of Python in the live engine (12,517 in the public copy). I didn't hand-type them. I decided what each part does, reviewed it, and verified it by running it. |
 
 <!-- careeros:start -->
 Public copy, run by GitHub every day. Last run Oct 17, 2026: 11,315 listings from 190 job boards · 744 checks passing · [run log](https://github.com/javierxelias-svg/careeros-public/actions/runs/39056373799)
@@ -45,5 +45,7 @@ What I keep out of the AI's hands: secrets (they live in GitHub secrets and the 
 ### The other half
 
 Two years as a butler and two years on the phone with health-insurance members taught me what most builders never practice: explaining technical things to non-technical people in the words they actually use, and staying calm when someone's problem is urgent.
+
+**Also built:** [Food Pantry Weekly Digest](https://javierxelias-svg.github.io/food-pantry-weekly-digest/), a working demo that turns a pantry's weekly numbers into a plain-English brief and a community ask ([code](https://github.com/javierxelias-svg/food-pantry-weekly-digest)).
 
 **Learning now:** SQL.
