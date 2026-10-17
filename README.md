@@ -21,6 +21,10 @@ A job-search engine I designed and operate. Every morning it reads employers' ow
 | **Tested** | **25 test files, 886 checks in the live engine (744 in the public copy), all passing.** When a real posting fools it, that posting becomes a test so the mistake can't come back. |
 | **Size** | ~13,800 lines of Python in the live engine. I didn't hand-type them. I decided what each part does, reviewed it, and verified it by running it. |
 
+<!-- careeros:start -->
+Public copy, run by GitHub every day: first run pending.
+<!-- careeros:end -->
+
 ### How I build
 
 1. **Write the rule first,** in plain words: what "done" means and what the system must never do.

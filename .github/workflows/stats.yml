@@ -1,0 +1,41 @@
+name: careeros-stats
+
+# What this is: once a day, read the public receipt that CareerOS writes about
+# its own daily run (careeros-public/proof/latest.json) and copy the headline
+# numbers into this profile's README. No secrets: the receipt is a public file.
+# If the receipt can't be read, the old line stays as it was.
+
+on:
+  schedule:
+    # 13:47 UTC, about two and a half hours after the CareerOS public run
+    # (11:17 UTC), so today's receipt is usually already there.
+    - cron: '47 13 * * *'
+  workflow_dispatch:   # lets you start it by hand from the Actions tab
+
+permissions:
+  contents: write   # needed only to commit the updated README
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Get a copy of this repo onto GitHub's machine.
+      - uses: actions/checkout@v4
+
+      # Fetch the receipt and rewrite the marked line in README.md.
+      # Uses only the Python that comes with the machine; nothing to install.
+      - name: Update the CareerOS line
+        run: python3 .github/scripts/update_stats.py
+
+      # Save README.md, signed by a bot, only if the line actually changed.
+      - name: Commit if changed
+        run: |
+          git config user.name  "careeros-bot"
+          git config user.email "careeros-bot@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "README unchanged, nothing to commit"; exit 0
+          fi
+          git commit -m "stats: CareerOS public run $(date -u +%F)"
+          git push
