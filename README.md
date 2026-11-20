@@ -22,7 +22,7 @@ A job-search engine I designed and operate. Every morning it reads employers' ow
 | **Size** | 13,765 lines of Python in the live engine (12,517 in the public copy). I didn't hand-type them. I decided what each part does, reviewed it, and verified it by running it. |
 
 <!-- careeros:start -->
-Public copy, run by GitHub every day. Last run Nov 19, 2026: 19,970 listings from 391 job boards · 960 checks passing · [run log](https://github.com/javierxelias-svg/careeros-public/actions/runs/44598792999)
+Public copy, run by GitHub every day. Last run Nov 20, 2026: 18,992 listings from 387 job boards · 960 checks passing · [run log](https://github.com/javierxelias-svg/careeros-public/actions/runs/44799080450)
 <!-- careeros:end -->
 
 ### How I build
